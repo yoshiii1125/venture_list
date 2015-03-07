@@ -34,7 +34,6 @@ group :development do
   gem 'rails-erd'              # モデルのER図をPDFで出力してくれる
   gem 'spring'                 # RspecなどでRailsをプリロードする
   gem 'capistrano'             # デプロイツール
-  gem 'bullet'                 # 余計なSQLを検出できる
   # gem 'guard'                # ファイルの変更を監視して作業を自動化 ※bundlerを使わないほうがいいためコメントアウト
 
   # debug
@@ -48,9 +47,12 @@ group :development do
   gem 'hirb-unicode'           # hirbの日本語対応
 end
 
-group :test do
+group :development, :test do
   gem 'rspec'                  # テストツール
   gem 'rspec-rails'            # RailsでRspecが使える
+end
+
+group :test do
   gem 'factory_girl_rails'     # テストデータの生成
   gem 'database_cleaner'       # テスト実行後にDBをクリア
   gem 'capybara'               # ブラウザでの操作をシミュレートしてテストができる

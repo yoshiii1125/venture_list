@@ -2,15 +2,17 @@
 <h1 class="text-center">成長<small>してる</small>ベンチャー<small>一覧</small></h1>
 <%= row_tag do %>
   <%= grid_tag 3 do %>
-    <%= panel_tag 'Fox', 'info' do %>
-      <dl>
-        <dt>サービス概要</dt>
-        <dd>なんかペットに自動的に餌をあげますよ。<br />画期的ですね</dd>
-        <dt>会社概要</dt>
-        <dd>Fox.inc アメリカのカリフォルニア州のスタートアップ</dd>
-        <dt>投資額</dt>
-        <dd>$$$$$</dd>
-      </dl>
+    <%= panel_tag @services.children[3].children[1].text, 'info' do %>
+      <%= link_to @services.children[5].children[1].attributes.first[1].value do %>
+        <dl>
+          <dt>サービス概要</dt>
+          <dd>なんかペットに自動的に餌をあげますよ。<br />画期的ですね</dd>
+          <dt>会社概要</dt>
+          <dd>Fox.inc アメリカのカリフォルニア州のスタートアップ</dd>
+          <dt>投資額</dt>
+          <dd><%= @services.children[13].children[1].text %></dd>
+        </dl>
+      <% end %>
     <% end %>
   <% end %>
   <%= grid_tag 3 do %>

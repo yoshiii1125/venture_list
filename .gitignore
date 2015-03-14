@@ -1,19 +1,29 @@
-# Ignore bundler config.
-/.bundle
+Ignore bundler config
+.bundle
+.env
+.envrc
+.bin
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
-/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
+*.log
 /tmp
+/tmp/*
 
-# Ignore other unneeded files.
-doc/
+/public/videos/*
+public/assets/*
+vendor/bundle/*
+vendor/bundle
+
+structure.sql
+
+database.yml
+*.local.yml
+
+.rake_tasks~
+tags
 *.swp
-*~
-.project
-.DS_Store
-.idea
-.secret
+
+.ruby-version

@@ -243,6 +243,7 @@ DEPENDENCIES
   jquery-rails (= 3.0.4)
   kaminari
   newrelic_rpm
+  nokogiri
   pg (= 0.15.1)
   pry-byebug
   pry-rails

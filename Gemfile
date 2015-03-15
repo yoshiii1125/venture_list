@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
-gem 'rails', '4.0.5'
+gem 'rails', '4.1'
 
 group :production do
   gem 'pg', '0.15.1'
@@ -18,6 +18,8 @@ gem 'jbuilder', '1.0.2'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-sass'
 gem 'nokogiri'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

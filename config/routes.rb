@@ -1,4 +1,6 @@
 VentureList::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root to: 'services#index'
   resources :services, only: [:index, :show, :edit]
 

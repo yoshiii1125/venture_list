@@ -27,7 +27,7 @@ class CreateTables < ActiveRecord::Migration
       t.integer :service_id, null: false
       t.integer :category_id, null: false
     end
-    create_table :status do |t|
+    create_table :statuses do |t|
       t.string :name, null: false
     end
     create_table :countries do |t|

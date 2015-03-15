@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   def index
-    @services = doc.css('table#seedcos tbody tr').first
+    @services = Service.all
   end
 
   def show

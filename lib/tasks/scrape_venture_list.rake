@@ -18,16 +18,14 @@ task :scrape_venture_list => :environment do
     status = line.children[1].children[1].try(:text)
     funded_at = line.children[7].children.text.to_date
     status_id = Status.find_or_create_by(name: status).id
-    puts 'url is null' if link.nil?
-    Service.find_or_create_by(
-      name: name,
-      web_url: link,
-      funding: funding,
-      fund_id: 1, # Y Combinator
-      source_id: 1, # Seed-DB
-      status_id: status_id,
-      funded_at: funded_at
-    )
+    Service.find_or_create_by(name: name) do |service|
+      service.web_url = link
+      service.funding  = funding
+      service.fund_id = 1 # Y Combinator
+      service.source_id =  1 # Seed-DB
+      service.status_id = status_id
+      service.funded_at = funded_at
+    end
     # 同時にメールかスラックに通知する
   end
 end

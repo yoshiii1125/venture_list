@@ -1,20 +1,24 @@
 <% content_for :title, 'ベンチャー企業一覧' %>
-<h1 class="text-center">成長<small>してる</small>ベンチャー<small>一覧</small></h1>
-<%= row_tag do %>
-  <% @services.each do |service| %>
-    <%= grid_tag 4 do %>
-      <%= panel_tag service.name, 'info' do %>
-        <%= link_to service.web_url, target: '_blank' do %>
-          <dl>
-            <dt>サービス概要</dt>
-            <dd class="mb-20">なんかペットに自動的に餌をあげますよ。<br />画期的ですね</dd>
-            <dt>会社概要</dt>
-            <dd class="mb-20">Fox.inc アメリカのカリフォルニア州のスタートアップ</dd>
-            <dt>投資額</dt>
-            <dd><%= service.funding || '???' %></dd>
-          </dl>
+<h1 class="text-center mb-20">成長<small>してる</small>ベンチャー<small>一覧</small></h1>
+<div class="container-fluid">
+  <%= row_tag do %>
+    <% @services.each do |service| %>
+      <%= grid_tag 4 do %>
+        <%= panel_tag service.name, 'info' do %>
+          <%= link_to service.web_url, target: '_blank' do %>
+            <dl>
+              <dt>サービス概要</dt>
+              <dd class="mb-20"><%= service.description || 'まだ概要はありません' %></dd>
+              <dt>会社名</dt>
+              <dd class="mb-20"><%= service.corp.try(:name) || '???'%></dd>
+              <dt>投資額</dt>
+              <dd class="mb-20"><%= service.funding || '???' %></dd>
+              <dt>投資日</dt>
+              <dd><%= service.funded_at.strftime(Settings.time.year_month) || '???' %></dd>
+            </dl>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
-<% end %>
+</div>

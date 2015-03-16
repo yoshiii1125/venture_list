@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.all
+    @services = Service.order('funded_at DESC').all
   end
 
   def show

@@ -5,4 +5,5 @@ class Service < ActiveRecord::Base
   belongs_to :fund
   belongs_to :status
   belongs_to :source
+  belongs_to :corp
 end

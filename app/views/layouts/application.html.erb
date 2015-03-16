@@ -23,20 +23,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <%= nav_li_tag 'ベンチャー一覧', services_path %>
-        <%= nav_li_tag 'About Us', about_us_static_pages_path %>
+        <%#= nav_li_tag 'About Us', about_us_static_pages_path %>
       </ul>
     </div>
   </div>
   </nav>
 
-  <div class="container">
-    <% flash.each do |name,msg| %>
-      <div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
-        <%= msg %>
-      </div>
-    <% end %>
+  <% flash.each do |name,msg| %>
+    <div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
+      <%= msg %>
+    </div>
+  <% end %>
 
-    <%= yield %>
-  </div>
+  <%= yield %>
 </body>
 </html>

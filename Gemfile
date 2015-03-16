@@ -20,6 +20,7 @@ gem 'font-awesome-sass'
 gem 'nokogiri'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
+gem 'link_thumbnailer'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
